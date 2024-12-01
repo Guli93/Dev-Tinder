@@ -1,0 +1,15 @@
+{
+  "name": "devtinder",
+  "version": "1.0.0",
+  "description": "This is a nodejs application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gulista",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
