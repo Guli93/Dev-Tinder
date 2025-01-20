@@ -4,12 +4,19 @@
   "description": "This is a nodejs application",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gulista",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3",
+    "validator": "^13.12.0"
   }
 }
