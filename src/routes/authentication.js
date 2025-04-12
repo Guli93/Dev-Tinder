@@ -24,7 +24,10 @@ authenticationRouter.post("/signup", async (req, res) => {
      const saveUser= await user.save();
      const token = await saveUser.getJWT();
 
-     res.cookie("token", token, { httpOnly: true, sameSite: "Strict" },{expires:"7d"});
+     res.cookie("token", token, { 
+      httpOnly: true, 
+      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7 days
+    });
       res.send("User successfully registered.");
   } catch (err) {
       if (err.code === 11000) {
@@ -55,7 +58,7 @@ authenticationRouter.post("/signup", async (req, res) => {
           console.log("Generated Token:", token);
   
           // Set the cookie with the token
-          res.cookie("token", token, { httpOnly: true, sameSite: "Strict" },{expires:"7d"});
+          res.cookie("token", token, { httpOnly: true, sameSite: "Strict" , maxAge: 7 * 24 * 60 * 60 * 1000 },);
           res.send(user);
         } else {
           throw new Error("Password is incorrect");
